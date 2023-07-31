@@ -19,13 +19,27 @@ const PORT = process.env.PORT || 3001;
 const notesArray = [];
 
 // need to set middleware for json/ html encoded
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 // need static path for homepage
+app.use(express.static('public'));
 
+// need get for notes
+app.get('/notes', (req, res) =>
+    res.sendFile(path.join(__dirname, '/public/notes.html'))
+);
 // need a get
+app.get('/api/notes', (req, res) =>
+    res.sendFile(path.join(__dirname, '/db/db.json'))
+);
 
 // need a post
 
-// need a listener for port
+// need get for homepage
+app.get('*', (req, res) =>
+    res.sendFile(path.join(__dirname, '/public/index.html'))
+);
 
-// will spread out between other JS pages (modularization)
+// need a listener for port
+app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
