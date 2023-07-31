@@ -1,6 +1,10 @@
 // import express/ fs/ path
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
 
 // define express as a variable
+const app = express();
 
 // define the port
 
@@ -20,7 +24,7 @@
 
 // need a fs write to file
 
-// need a delete
+// need a delete file
 
 // need a listener for port
 
