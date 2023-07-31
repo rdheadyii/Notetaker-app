@@ -3,28 +3,28 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
+// helper functions for reading/writing/deleting
+const { readFromFile, readAndAppend, deleteFromFile } = require('./helpers/fsUtils');
+
+// logic for generating id number
+const uuid = require('./helpers/uuid');
+
 // define express as a variable
 const app = express();
 
 // define the port
-
-// logic for generating id number
+const PORT = process.env.PORT || 3001;
 
 // array for notes
+const notesArray = [];
 
-// need to set express variable for json/ html encoded
+// need to set middleware for json/ html encoded
 
 // need static path for homepage
 
 // need a get
 
 // need a post
-
-// need a fs read file
-
-// need a fs write to file
-
-// need a delete file
 
 // need a listener for port
 
