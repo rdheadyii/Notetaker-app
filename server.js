@@ -31,7 +31,7 @@ app.get('/notes', (req, res) =>
 );
 // need a get
 app.get('/api/notes', (req, res) =>
-    res.sendFile(path.join(__dirname, '/db/db.json'))
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 );
 
 // need a post
