@@ -49,6 +49,11 @@ app.post('/api/notes', (req, res) => {
     }
 });
 
+// need a delete (bonus)
+// app.delete('api/notes/:id', (req, res) => {
+
+// });
+
 // need get for homepage
 app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, '/public/index.html'))
