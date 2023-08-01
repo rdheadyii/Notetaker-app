@@ -35,6 +35,22 @@ app.get('/api/notes', (req, res) =>
 );
 
 // need a post
+app.post('/api/notes', (req, res) => {
+    const { noteTitle, noteText } = req.body;
+
+    if (req.body) {
+        const newNote = {
+        noteTitle,
+        noteText,
+        note_id: uuid(),
+        };
+
+        readAndAppend(newNote, './db/db.json');
+        res.json(`Note added successfully`);
+    } else {
+        res.error('Error in adding note');
+    }
+});
 
 // need get for homepage
 app.get('*', (req, res) =>
