@@ -19,14 +19,16 @@
   npm i
 
   ## Usage
-  Once npm i is used, visit the link below and press the button on screen to go the page to add notes. Type in a note title and message then press the save button.
+  Once npm i is used, visit the link below and click the "Get Started" button on screen to go the page to add notes. Type in a note title and message then press the save button. To delete press the red trashcan on the note and then refresh page to see the note is gone.
+
+  https://notetakerap-c591d539718a.herokuapp.com/
 
   ## License
   For more information on this license, please visit https://mit-license.org/
 
   ## Display
   ![Display of what homepage looks like](./images/screenshot-home.PNG)
-  ![Display of what homepage looks like](./images/screenshot-notes.PNG)
+  ![Display of what notes page looks like](./images/screenshot-notes.PNG)
 
 
   ## Contributors
