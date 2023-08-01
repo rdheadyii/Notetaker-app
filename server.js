@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 // helper functions for reading/writing/deleting
-const { readFromFile, readAndAppend, deleteFromFile } = require('./helpers/fsUtils');
+const { readFromFile, readAndAppend, writeToFile } = require('./helpers/fsUtils');
 
 // logic for generating id number
 const uuid = require('./helpers/uuid');
@@ -39,7 +39,7 @@ app.post('/api/notes', (req, res) => {
         const newNote = {
         title,
         text,
-        note_id: uuid(),
+        id: uuid(),
         };
 
         readAndAppend(newNote, './db/db.json');
@@ -50,9 +50,15 @@ app.post('/api/notes', (req, res) => {
 });
 
 // need a delete (bonus)
-// app.delete('api/notes/:id', (req, res) => {
-
-// });
+app.delete('/api/notes/:id', (req, res) => {
+    readFromFile('./db/db.json').then((data) => {
+        const ogData = JSON.parse(data);
+        console.log(ogData);
+        const newData = ogData.filter(note => {note.id !== req.params.id});
+        // write file with new data
+        writeToFile('./db/db.json', newData);
+    })
+});
 
 // need get for homepage
 app.get('*', (req, res) =>
