@@ -15,9 +15,6 @@ const app = express();
 // define the port
 const PORT = process.env.PORT || 3001;
 
-// array for notes
-const notesArray = [];
-
 // need to set middleware for json/ html encoded
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
