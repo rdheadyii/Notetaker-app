@@ -22,16 +22,16 @@ app.use(express.urlencoded({extended: true}));
 // need static path for homepage
 app.use(express.static('public'));
 
-// need get for notes
+// get for notes pages
 app.get('/notes', (req, res) =>
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
-// need a get
+// get for all notes
 app.get('/api/notes', (req, res) =>
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 );
 
-// need a post
+// post new note to db
 app.post('/api/notes', (req, res) => {
     const { title, text } = req.body;
 
@@ -49,7 +49,7 @@ app.post('/api/notes', (req, res) => {
     }
 });
 
-// need a delete (bonus)
+// deletes a note from db
 app.delete('/api/notes/:id', (req, res) => {
     readFromFile('./db/db.json').then((data) => {
         const ogData = JSON.parse(data);
@@ -62,10 +62,10 @@ app.delete('/api/notes/:id', (req, res) => {
     })
 });
 
-// need get for homepage
+// catch all get for homepage
 app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
-// need a listener for port
+// listener for port
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
