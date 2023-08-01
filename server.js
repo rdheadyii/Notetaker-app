@@ -36,12 +36,12 @@ app.get('/api/notes', (req, res) =>
 
 // need a post
 app.post('/api/notes', (req, res) => {
-    const { noteTitle, noteText } = req.body;
+    const { title, text } = req.body;
 
     if (req.body) {
         const newNote = {
-        noteTitle,
-        noteText,
+        title,
+        text,
         note_id: uuid(),
         };
 
