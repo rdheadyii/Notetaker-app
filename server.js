@@ -54,7 +54,9 @@ app.delete('/api/notes/:id', (req, res) => {
     readFromFile('./db/db.json').then((data) => {
         const ogData = JSON.parse(data);
         console.log(ogData);
-        const newData = ogData.filter(note => {note.id !== req.params.id});
+        console.log(req.params.id);
+        const newData = ogData.filter(note => note.id !== req.params.id);
+        console.log(newData);
         // write file with new data
         writeToFile('./db/db.json', newData);
     })
