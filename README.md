@@ -20,7 +20,7 @@ This was a code refactor of given starter code. With the starter code I had to a
 npm i
 
 ## Usage
-Once npm i is used, visit the link below and click the "Get Started" button on screen to go the page to add notes. Type in a note title and message then press the save button. To delete press the red trashcan on the note and then refresh page to see the note is gone.
+Visit the link below and click the "Get Started" button on screen to go the page to add notes. Type in a note title and message then press the save button. To delete press the red trashcan on the note and then refresh page to see the note is gone.
 
 https://notetakerap-c591d539718a.herokuapp.com/
 
