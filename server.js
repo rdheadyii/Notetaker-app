@@ -1,7 +1,6 @@
 // import express/ fs/ path
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
 
 // helper functions for reading/writing/deleting
 const { readFromFile, readAndAppend, writeToFile } = require('./helpers/fsUtils');
